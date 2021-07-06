@@ -57,6 +57,11 @@ Success! We were able to connect to the application running inside of our contai
 ```
 
 Press ctrl-c to stop the container.
+> **Note**
+>
+> If ctrl-c does not stop the container, then you can stop it from within Docker Desktop:
+> Switch to the Docker Desktop application and click on _Containers / Apps_ in the top left corner.
+> Hover over your _RUNNING_ Container _python-docker_ on _Port: 5000_ and klick on the _STOP_ button on the right-hand side.
 
 ## Run in detached mode
 
