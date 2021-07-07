@@ -39,12 +39,7 @@ Now we can run MySQL in a container and attach to the volumes and network we cre
 In the following command, option `-v` is for starting the container with volumes. For more information, see [Docker volumes](../../storage/volumes.md).
 
 ```shell
-$ docker run --rm -d -v mysql:/var/lib/mysql \
-  -v mysql_config:/etc/mysql -p 3306:3306 \
-  --network mysqlnet \
-  --name mysqldb \
-  -e MYSQL_ROOT_PASSWORD=p@ssw0rd1 \
-  mysql
+$ docker run --rm -d -v mysql:/var/lib/mysql -v mysql_config:/etc/mysql -p 3306:3306 --network mysqlnet --name mysqldb -e MYSQL_ROOT_PASSWORD=p@ssw0rd1 mysql
 ```
 
 Now, let’s make sure that our MySQL database is running and that we can connect to it. Connect to the running MySQL database inside the container using the following command and enter "p@ssw0rd1" when prompted for the password:
@@ -159,12 +154,7 @@ $ docker build --tag python-docker .
 Now, let’s add the container to the database network and then run our container. This allows us to access the database by its container name.
 
 ```shell
-$ docker run \
-  --rm -d \
-  --network mysqlnet \
-  --name rest-server \
-  -p 5000:5000 \
-  python-docker
+$ docker run --rm -d --network mysqlnet --name rest-server -p 5000:5000 python-docker
 ```
 
 Let’s test that our application is connected to the database and is able to add a note.
